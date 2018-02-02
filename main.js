@@ -1,5 +1,5 @@
 
-
+//planet variables with their ratio per 1 earth pound.
 var planets = [
   ['Pluto', 0.06],
   ['Neptune', 1.148],
@@ -14,18 +14,20 @@ var planets = [
   ['Sun', 27.9]
 ];
 
-
+//function for the equation to determine your weight on other planets.
 function reverse(s) {
   var o = '';
   for (var i = s.length - 1; i >= 0; i--)
    o += s[i];
   return o}
 
+//declaring the variables that display the input, select, submit button and output.
 var input= document.getElementById("user-weight");
 var selectL= document.getElementById("planets");
 var submitEl = document.getElementById("calculate-button");
 var output = document.getElementById("output");
 
+//declares var for name, opt and selectL and sets attributes.
 planets.forEach(function(item) {
   var name = item[0];
   var opt = document.createElement("option");
@@ -35,9 +37,7 @@ planets.forEach(function(item) {
   selectL.appendChild(opt);
  });
 
-
-
-
+//submit button function
 submitEl.onclick = function(e) {
   var userWeight = input.value;
   var userChoice = selectL.value;
@@ -50,6 +50,7 @@ submitEl.onclick = function(e) {
     }
   });
 
+//results
  var result = weight * userWeight;
   output.innerHTML= "If you were on " + userChoice + ", you would weigh " + result +"lbs!";
   
